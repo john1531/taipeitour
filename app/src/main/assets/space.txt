@@ -1,0 +1,12 @@
+[
+    {
+        "CompSite_ID": "110",
+        "CompKind_Title": "開幕",
+        "CompSite_Title": "嘉義縣立田徑場"
+    },
+    {
+        "CompSite_ID": "120",
+        "CompKind_Title": "閉幕",
+        "CompSite_Title": "嘉義縣人力發展所大禮堂"
+    }
+]

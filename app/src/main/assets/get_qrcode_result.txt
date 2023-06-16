@@ -1,0 +1,15 @@
+{
+    "Msg": "fail",
+    "Result": "查無資料",
+    "CardID": "",
+    "Card_CompKind": "",
+    "Card_Name": "",
+    "Card_Cate": "",
+    "Card_Code": "",
+    "Card_Tel": "",
+    "Card_County": "",
+    "Card_JobTitle": "",
+    "Card_IdCard": "",
+    "Card_Seat": "",
+    "Card_TOCC": ""
+}

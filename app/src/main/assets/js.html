@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<button onclick="getLoginInfo()">getLoginInfo</button>
+<button onclick="addCalender('gametitle', 'gamedesc', '2023-05-05 08:00:00', '2023-05-05 12:00:00')">addCalender</button>
+<button onclick="openMap('25.002006', '121.506428')">openMap</button>
+<button onclick="logout()">logout</button>
+
+</body>
+</html>
+
+<script>
+
+    // web -> app
+	function getLoginInfo(){
+		try {
+	        window.webkit.messageHandlers.getLoginInfo.postMessage(null);
+	    }catch (ex){}
+		try {
+	        JavaScriptReceiver.getLoginInfo();
+	    } catch (ex) {}
+	}
+
+    function addCalender(title, desc, start, end){
+        try {
+            window.webkit.messageHandlers.addCalender.postMessage([title, desc, start, end]);
+        }catch (ex){}
+        try {
+            JavaScriptReceiver.addCalender([title, desc, start, end]);
+        } catch (ex) {}
+    }
+
+    function openMap(lat, long){
+        try {
+            window.webkit.messageHandlers.openMap.postMessage([lat, long]);
+        }catch (ex){}
+        try {
+            JavaScriptReceiver.openMap([lat, long]);
+        } catch (ex) {}
+    }
+
+    function logout(){
+        try {
+            window.webkit.messageHandlers.logout.postMessage(null);
+        }catch (ex){}
+        try {
+            JavaScriptReceiver.logout();
+        } catch (ex) {}
+    }
+
+    // app -> web
+	function sendLoginInfo(type, account, password){
+	    alert(type);
+        alert(account);
+        alert(password);
+	}
+
+</script>

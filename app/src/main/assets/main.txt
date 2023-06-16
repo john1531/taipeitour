@@ -1,0 +1,159 @@
+{
+  "code": 200,
+  "reason": "",
+  "data": {
+    "color": {
+      "navi_bar": "#FF4500",
+      "tabbar": "#FFF000",
+      "tabbar_hold": "#FFFFFF",
+      "tabbar_text": "#000FFF"
+    },
+    "menu_sidebar": [
+      {
+        "text": "menu1",
+        "url": "https://gaohowa.com",
+        "type":"0"
+      },
+      {
+        "text": "menu2",
+        "url": "https://gaohowa.com",
+        "type":"0"
+      },
+      {
+        "text": "menu3",
+        "url": "https://gaohowa.com",
+        "type":"0"
+      },
+      {
+        "text": "menu4",
+        "url": "https://gaohowa.com",
+        "type":"0"
+      },
+      {
+        "text": "menu5",
+        "url": "https://gaohowa.com",
+        "type":"0"
+      },
+      {
+        "text": "menu6",
+        "url": "https://gaohowa.com",
+        "type":"0"
+      }
+    ],
+    "menu_tabbar": [
+        {
+          "text":"Tab1",
+          "url":"網址",
+          "icon":"圖片網址",
+          "type":"0"
+        },
+        {
+          "text":"Tab2",
+          "url":"網址",
+          "icon":"圖片網址",
+          "type":"0"
+        },
+        {
+          "text":"首頁",
+          "url":"網址",
+          "icon":"圖片網址",
+          "type":"1"
+        },
+        {
+          "text":"Tab3",
+          "url":"網址",
+          "icon":"圖片網址",
+          "type":"0"
+        },
+        {
+          "text":"更多",
+          "url":"網址",
+          "icon":"圖片網址",
+          "type":"2"
+        }
+    ],
+    "menu_tabbar_more": [
+      {
+        "title": "個人",
+        "menu": [
+          {
+            "text": "標題1",
+            "url": "https://google.com",
+            "icon": "圖片網址",
+            "type":"0"
+          },
+          {
+            "text": "標題2",
+            "url": "https://google.com",
+            "icon": "圖片網址",
+            "type":"0"
+          },
+          {
+            "text": "標題3",
+            "url": "https://google.com",
+            "icon": "圖片網址",
+            "type":"0"
+          },
+          {
+            "text": "標題4",
+            "url": "https://google.com",
+            "icon": "圖片網址",
+            "type":"0"
+          },
+          {
+            "text": "標題5",
+            "url": "https://google.com",
+            "icon": "圖片網址",
+            "type":"0"
+          },
+          {
+            "text": "標題6",
+            "url": "https://google.com",
+            "icon": "圖片網址",
+            "type":"0"
+          }
+        ]
+      },
+      {
+        "title": "一般",
+        "menu": [
+            {
+              "text":"標題7",
+              "url":"網址",
+              "icon":"圖片網址",
+              "type":"0"
+            },
+            {
+              "text":"聖火地圖",
+              "url":"網址",
+              "icon":"圖片網址",
+              "type":"3"
+            },
+            {
+              "text":"標題8",
+              "url":"網址",
+              "icon":"圖片網址",
+              "type":"0"
+            }
+        ]
+      },
+      {
+        "title": "工作人員",
+        "menu": [
+          {
+            "text":"聖火地圖",
+            "url":"網址",
+            "icon":"圖片網址",
+            "type":"4"
+          },
+          {
+            "text":"掃描",
+            "url":"網址",
+            "icon":"圖片網址",
+            "type":"5"
+          }
+        ]
+      }
+    ]
+  }
+}
