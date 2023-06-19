@@ -17,14 +17,24 @@
         android:layout_height="0dp"
         android:layout_margin="10dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_attraction"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="100"
-            android:divider="@null"
-            android:dividerHeight="0dp"
-            android:background="#00000000" />
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_attraction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:background="#00000000" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     </LinearLayout>
 

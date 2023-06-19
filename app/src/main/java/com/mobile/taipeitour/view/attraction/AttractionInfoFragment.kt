@@ -1,4 +1,4 @@
-package com.mobile.taipeitour.views
+package com.mobile.taipeitour.view.attraction
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,24 +7,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.gson.Gson
 import com.mobile.taipeitour.R
-import com.mobile.taipeitour.api.RequestManager
-import com.mobile.taipeitour.model.AttractionData
-import com.mobile.taipeitour.model.Attractions
-import com.mobile.taipeitour.utils.LoadingUtil
-import com.mobile.taipeitour.utils.PrefUtil
-
-private const val ARG_ATTRACTION = "attractions"
+import com.mobile.taipeitour.model.attraction.AttractionData
 
 /**
  * A simple [Fragment] subclass.
  * Use the [AttractionInfoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+private const val ARG_ATTRACTION = "attractions"
+
 class AttractionInfoFragment : Fragment() {
     var v: View? = null
 

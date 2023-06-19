@@ -3,10 +3,7 @@ package com.mobile.taipeitour
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import coil.ImageLoader
-import coil.disk.DiskCache
-import coil.memory.MemoryCache
-import com.mobile.taipeitour.views.AttractionFragment
+import com.mobile.taipeitour.view.attraction.AttractionFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,6 +1,6 @@
-package com.mobile.taipeitour.model
+package com.mobile.taipeitour.model.attraction
 
-data class Attractions (
+data class AttractionsModel (
     val total: Int,
     val `data`: List<AttractionData>
 )

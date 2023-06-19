@@ -13,8 +13,6 @@ import androidx.appcompat.app.AlertDialog
 
 class LoadingUtil {
 
-
-
     companion object {
 
         private var instance: AlertDialog? = null

@@ -1,42 +1,42 @@
 package com.mobile.taipeitour.api
 
 import android.app.Activity
+import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import okhttp3.*
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
-class RequestManager {
-
-    private val client = OkHttpClient()
-
-    fun requestAttractions(act: Activity, lang: String, myCallback: (result: String) -> Unit) {
-        val request = Request.Builder()
-            .header("Accept", "application/json")
-            .get()
-            .url("${ApiConstants.API_DOMAIN}/$lang/Attractions/All?page=1")
-            .build()
-
-        request(request) {
-            act.runOnUiThread(Runnable {
-                myCallback(it)
-            })
-        }
+open class RequestManager {
+    protected var mUrl: String? = null
+    constructor(url: String) {
+        mUrl = url
     }
 
-    private fun request(request: Request, result: (result: String) -> Unit) {
+    open fun getRetrofit(context: Context?): Retrofit {
+        val httpClient: OkHttpClient.Builder = OkHttpClient.Builder()
+        httpClient.addInterceptor { chain ->
+            val original = chain.request()
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                Log.d("RequestFail", e.toString())
-            }
+            var request = original.newBuilder()
+                .header("Accept", "application/json")
+                .method(original.method, original.body)
+                .build()
 
-            override fun onResponse(call: Call, response: Response) {
-                result(response.body!!.string())
-            }
-        })
+            return@addInterceptor chain.proceed(request)
+        }
+
+        val client: OkHttpClient = httpClient.build()
+        return Retrofit
+            .Builder()
+            .baseUrl(mUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
     }
 }

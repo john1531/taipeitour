@@ -1,7 +1,6 @@
-package com.mobile.taipeitour.views
+package com.mobile.taipeitour.view.attraction
 
 import android.app.Activity
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,11 +16,9 @@ import coil.memory.MemoryCache
 import com.google.gson.Gson
 import com.mobile.taipeitour.MainActivity
 import com.mobile.taipeitour.R
-import com.mobile.taipeitour.model.AttractionData
-import com.mobile.taipeitour.model.Attractions
+import com.mobile.taipeitour.model.attraction.AttractionData
 
-
-class AttractionAdapter(act: FragmentActivity, private val objAttractions: Attractions) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AttractionAdapter(act: FragmentActivity, private val arrAttractions: List<AttractionData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val activity: Activity = act
     var imageLoader: ImageLoader? = null
@@ -46,7 +43,8 @@ class AttractionAdapter(act: FragmentActivity, private val objAttractions: Attra
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.cell_attraction, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.cell_attraction, parent, false)
 
         activity.let { it->
             imageLoader = ImageLoader.Builder(it)
@@ -69,7 +67,7 @@ class AttractionAdapter(act: FragmentActivity, private val objAttractions: Attra
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder as ViewHolderPlace){
-            val dataAttraction = objAttractions.data[position]
+            val dataAttraction = arrAttractions[position]
 
             txtTitle?.text = dataAttraction.name
             txtDesc?.text = dataAttraction.introduction
@@ -101,7 +99,7 @@ class AttractionAdapter(act: FragmentActivity, private val objAttractions: Attra
     }
 
     override fun getItemCount(): Int {
-        return objAttractions.data.size
+        return arrAttractions.size
     }
 
 

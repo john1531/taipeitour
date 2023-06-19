@@ -1,4 +1,5 @@
-package com.mobile.taipeitour.views
+package com.mobile.taipeitour.view.attraction
+
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
