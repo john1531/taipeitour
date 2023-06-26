@@ -36,8 +36,28 @@ class AttractionFragment : Fragment() {
 
     var reload = false
     var currentPage = 1
-    val langsKey = arrayOf("zh-tw", "zh-cn", "en", "ja", "ko", "es", "id", "th", "vi")
-    val langsDesc = arrayOf("正體中文", "簡體中文", "英文", "日文", "韓文", "西班牙文", "印尼文", "泰文", "越南文")
+
+    // save to res xml
+    val langsKey = arrayOf(
+        getString(R.string.lang_code_zhtw),
+        getString(R.string.lang_code_zhcn),
+        getString(R.string.lang_code_en),
+        getString(R.string.lang_code_ja),
+        getString(R.string.lang_code_ko),
+        getString(R.string.lang_code_es),
+        getString(R.string.lang_code_id),
+        getString(R.string.lang_code_th),
+        getString(R.string.lang_code_vi))
+    val langsDesc = arrayOf(
+        getString(R.string.lang_text_zhtw),
+        getString(R.string.lang_text_zhcn),
+        getString(R.string.lang_text_en),
+        getString(R.string.lang_text_ja),
+        getString(R.string.lang_text_ko),
+        getString(R.string.lang_text_es),
+        getString(R.string.lang_text_id),
+        getString(R.string.lang_text_th),
+        getString(R.string.lang_text_vi))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +91,7 @@ class AttractionFragment : Fragment() {
             }
         }
 
-        root.findViewById<TextView>(R.id.textTitle).text = "TaipeiTour"
+        root.findViewById<TextView>(R.id.textTitle).text = getString(R.string.app_en_name)
         root.findViewById<Button>(R.id.btnBack).visibility = View.INVISIBLE
         root.findViewById<Button>(R.id.btnLanguage).setOnClickListener {
             showLanguageChoiceDialog()
@@ -109,10 +129,10 @@ class AttractionFragment : Fragment() {
 
         this.activity?.let {
 
-            this.loadingDialog = LoadingUtil.getInstance(it, "讀取中...請稍候")
+            this.loadingDialog = LoadingUtil.getInstance(it, getString(R.string.loading))
             this.loadingDialog?.show()
 
-            var language = PrefUtil.getPref(it, "language") ?: "zh-tw"
+            var language = PrefUtil.getPref(it, "language") ?: getString(R.string.lang_code_zhtw)
             val paramData = mapOf<String, Any>(
                 "lang" to language,
                 "page" to currentPage
@@ -128,18 +148,18 @@ class AttractionFragment : Fragment() {
 
         this.activity?.let {
             val builder = AlertDialog.Builder(it)
-            builder.setTitle("請選擇顯示語言")
+            builder.setTitle(getString(R.string.select_language))
                 .setSingleChoiceItems(langsDesc, selectedLang) { dialog: DialogInterface, which: Int ->
                     selectedLang = which
                 }
-                .setPositiveButton("確定") { dialog: DialogInterface, which: Int ->
+                .setPositiveButton(getString(R.string.confirm)) { dialog: DialogInterface, which: Int ->
                     val selectedOption = langsKey[selectedLang]
 
                     PrefUtil.setPref(it, "language", selectedOption)
 
                     this.fetch()
                 }
-                .setNegativeButton("取消") { dialog: DialogInterface, which: Int ->
+                .setNegativeButton(getString(R.string.cancel)) { dialog: DialogInterface, which: Int ->
                     dialog.dismiss()
                 }
 

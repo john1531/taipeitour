@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">台北遊憩景點</string>
+    <string name="app_en_name">TaipeiTour</string>
+
+    <string name="confirm">確定</string>
+    <string name="cancel">取消</string>
+    <string name="select_language">請選擇顯示語言</string>
+    <string name="loading">讀取中...請稍候</string>
+
+
+    <string name="lang_code_zhtw">zh-tw</string>
+    <string name="lang_code_zhcn">zh-cn</string>
+    <string name="lang_code_en">en</string>
+    <string name="lang_code_ja">ja</string>
+    <string name="lang_code_ko">ko</string>
+    <string name="lang_code_es">es</string>
+    <string name="lang_code_id">id</string>
+    <string name="lang_code_th">th</string>
+    <string name="lang_code_vi">vi</string>
+
+    <string name="lang_text_zhtw">正體中文</string>
+    <string name="lang_text_zhcn">簡體中文</string>
+    <string name="lang_text_en">英文</string>
+    <string name="lang_text_ja">日文</string>
+    <string name="lang_text_ko">韓文</string>
+    <string name="lang_text_es">西班牙文</string>
+    <string name="lang_text_id">印尼文</string>
+    <string name="lang_text_th">泰文</string>
+    <string name="lang_text_vi">越南文</string>
 
 </resources>
