@@ -37,28 +37,6 @@ class AttractionFragment : Fragment() {
     var reload = false
     var currentPage = 1
 
-    // save to res xml
-    val langsKey = arrayOf(
-        getString(R.string.lang_code_zhtw),
-        getString(R.string.lang_code_zhcn),
-        getString(R.string.lang_code_en),
-        getString(R.string.lang_code_ja),
-        getString(R.string.lang_code_ko),
-        getString(R.string.lang_code_es),
-        getString(R.string.lang_code_id),
-        getString(R.string.lang_code_th),
-        getString(R.string.lang_code_vi))
-    val langsDesc = arrayOf(
-        getString(R.string.lang_text_zhtw),
-        getString(R.string.lang_text_zhcn),
-        getString(R.string.lang_text_en),
-        getString(R.string.lang_text_ja),
-        getString(R.string.lang_text_ko),
-        getString(R.string.lang_text_es),
-        getString(R.string.lang_text_id),
-        getString(R.string.lang_text_th),
-        getString(R.string.lang_text_vi))
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -146,6 +124,27 @@ class AttractionFragment : Fragment() {
     private fun showLanguageChoiceDialog() {
         var selectedLang = 0
 
+        val langsKey = arrayOf(
+            getString(R.string.lang_code_zhtw),
+            getString(R.string.lang_code_zhcn),
+            getString(R.string.lang_code_en),
+            getString(R.string.lang_code_ja),
+            getString(R.string.lang_code_ko),
+            getString(R.string.lang_code_es),
+            getString(R.string.lang_code_id),
+            getString(R.string.lang_code_th),
+            getString(R.string.lang_code_vi))
+        val langsDesc = arrayOf(
+            getString(R.string.lang_text_zhtw),
+            getString(R.string.lang_text_zhcn),
+            getString(R.string.lang_text_en),
+            getString(R.string.lang_text_ja),
+            getString(R.string.lang_text_ko),
+            getString(R.string.lang_text_es),
+            getString(R.string.lang_text_id),
+            getString(R.string.lang_text_th),
+            getString(R.string.lang_text_vi))
+
         this.activity?.let {
             val builder = AlertDialog.Builder(it)
             builder.setTitle(getString(R.string.select_language))
@@ -157,6 +156,7 @@ class AttractionFragment : Fragment() {
 
                     PrefUtil.setPref(it, "language", selectedOption)
 
+                    reload = true
                     this.fetch()
                 }
                 .setNegativeButton(getString(R.string.cancel)) { dialog: DialogInterface, which: Int ->
